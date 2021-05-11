@@ -1,0 +1,138 @@
+{% extends 'base.html' %}
+{% block body %}
+<html >
+<head>
+ 
+</head>
+<body>
+    <nav class="navbar navbar-dark bg-dark">
+        <span class="navbar-brand mb-0 h1">Diabetes Diagnosis</span>
+    </nav>
+    <div class="container">
+        {% with messages = get_flashed_messages() %}
+            {% if messages %}
+                {% for msgs in messages %}
+                <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                    <strong>{{ msgs}}</strong> 
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                {% endfor %}
+            {% endif %}
+        {% endwith %} 
+           
+    </div>
+
+    <div class="container">
+        <form action="\diabetesprediction" method="POST">
+
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <h6 class="card-title" >Age</h6>
+                            <input class="form-control" type="number" name="age" id="age" required="required" placeholder="What is your age?">
+                        </div>
+                    </div>
+                </div>
+            
+
+                <br>
+ 
+                <div class="col-sm-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <h6 class="card-title">Pregnancies</h6>
+                            <input class="form-control" type="number" name="pregnancy" id="pregnancy" required="required" placeholder="No of pregnancies encountered?">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <br>
+ 
+            <div class="row">
+
+                <div class="col-sm-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <h6 class="card-title">Glucose</h6>
+                            <input class="form-control" type="number" name="glucose" id="glucose" required="required" placeholder="What is your blood glucose level (mg/dL)?">
+                        </div>
+                    </div>
+                </div>
+
+                <br>
+ 
+                <div class="col-sm-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <h6 class="card-title">Blood Pressure</h6>
+                            <input class="form-control" type="number" name="bloodpressure" id="bloodpressure" required="required" placeholder="What is your blood pressure level (mm Hg)?">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <br>
+            
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <h6 class="card-title">Skin Thickness</h6>
+                            <input class="form-control" type="number" name="skinthickness" id="skinthickness" required="required" placeholder="What is your skin thickness level (mm)?">
+                        </div>
+                    </div>
+                </div>
+
+                <br>
+
+                <div class="col-sm-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <h6 class="card-title">BMI</h6>
+                            <input class="form-control" type="number" name="bmi" id="bmi" required="required" placeholder="What is your body mass index?">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <br>
+
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <h6 class="card-title">Insulin</h6>
+                            <input class="form-control" type="number" name="insulin" id="insulin" required="required" placeholder="What is your body insulin level (mlU/L)?">
+                        </div>
+                    </div>
+
+                </div>
+
+                <br>
+                <div class="col-md-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <h6 class="card-title">Diabetes Pedigree Function</h6>
+                            <input class="form-control" type="text" name="dmf" id="dmf" required="required" placeholder="A score for likelihood of diabetes based on family history (0-1)">
+                           
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <br>
+            <center>
+                <button type="submit" value="submit" class="btn btn-primary" >Submit</button>
+                <a class="btn btn-secondary"href="{{ url_for('home') }}">Back</a>
+            </center>
+        </form>
+        <center><p>©2021 Mohammed Siddiq</p></center>
+</body>
+</html>
+
+{% endblock %}
+

@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+{% block body %}
+<html lang="en">
+<head>
+    <nav class="navbar navbar-dark bg-dark">
+        <span class="navbar-brand mb-0 h1">Spam Detection</span>
+    </nav>
+    <div class="container">
+        {% with messages = get_flashed_messages() %}
+            {% if messages %}
+                {% for msgs in messages %}
+                <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                    <strong>{{ msgs}}</strong> 
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+    </div>
+</head>
+<body>
+    <br>
+    <div class="container">
+        <center>
+            <form action = "/spamdetection" method = "POST">
+                <h3>Want to identify your mail as spam or ham?</h3>
+                Paste your mail in the below text box
+                <br>
+                <textarea rows = "10" cols = "100" name = "description" id="description" >
+                   
+                </textarea><br>
+                <br>
+                <center>
+                    <input type = "submit" value = "submit" class="btn btn-primary"/>
+                    <a class="btn btn-secondary"href="{{ url_for('home') }}">Back</a>
+                </center>
+             </form>
+
+        </center>
+        
+         
+    </div>
+    <br>
+    <center><p>©2021 Mohammed Siddiq</p></center>
+</body>
+</html>
+{% endblock %}

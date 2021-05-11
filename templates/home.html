@@ -1,0 +1,75 @@
+{% extends 'base.html' %}
+{% block body %}
+<!-- Image and text -->
+<nav class="navbar navbar-dark bg-dark">
+    <a class="navbar-brand" href="#">
+        <img src="https://st3.depositphotos.com/11747323/17845/v/600/depositphotos_178454230-stock-illustration-ms-letter-logo.jpg" width="30" height="30" class="d-inline-block align-top" alt="">
+        M.S Analytics
+    </a>
+</nav>
+<br>
+<br>
+<div class="container">
+    <div class="row">
+        <div class="col-sm-3">
+            <div class="card" style="width: 16rem;">
+                <img style="height: 300px; width:254px" class="card-img-top" src="https://content.audiospace.co/stations/40/files/Directory/AdobeStock_120349760.jpeg" alt="Card image cap">
+                <div class="card-body">
+                  <h5 class="card-title">Vehicle Performance</h5>
+                  <p class="card-text">Predicting car's mileage (Km/l) with 86% accuracy</p>
+                  <a href="{{ url_for('vehicleperformance') }}" class="btn btn-primary">Predict</a>
+                </div>
+              </div>
+        </div>
+        <br>
+
+        <div class="col-sm-3">
+            <div class="card" style="width: 16rem;">
+                <img style="height: 300px; width:254px" class="card-img-top" src="https://res.cloudinary.com/grohealth/image/upload/$wpsize_!post-thumbnail!,w_1000,h_600,c_fill,g_auto/v1588094388/How-to-Bring-Down-High-Blood-Sugar-Levels-1.png" alt="Card image cap">
+                <div class="card-body">
+                  <h5 class="card-title">Diabetes Diagnosis</h5>
+                  <p class="card-text">Predicting diabetes with 80% accuracy</p>
+                  <a href="{{ url_for('diabetesprediction') }}" class="btn btn-primary">Predict</a>
+                </div>
+            </div>
+        </div>
+        <br>
+
+        <div class="col-sm-3">
+          <div class="card" style="width: 16rem;">
+              <img style="height: 300px; width:254px" class="card-img-top" src="https://www.tipsandtricks-hq.com/wp-content/uploads/2018/10/gmail-filters-web-improvement.jpg" alt="Card image cap">
+              <div class="card-body">
+                <h5 class="card-title">Spam Detection</h5>
+                <p class="card-text">Detecting spam mail with 98% accuracy</p>
+                <a href="{{ url_for('spamdetection') }}" class="btn btn-primary">Check</a>
+              </div>
+          </div>
+        </div>
+        <br>
+        <div class="col-sm-3">
+          <div class="card" style="width: 16rem;">
+              <img style="height: 300px; width:254px" class="card-img-top" src="https://blog.gale.com/wp-content/uploads/2015/02/genderimage.png" alt="Card image cap">
+              <div class="card-body">
+                <h5 class="card-title">Gender Classification</h5>
+                <p class="card-text">Classifying gender with 91% accuracy</p>
+                <a href="{{ url_for('genderclassification') }}" class="btn btn-primary">Classify</a>
+              </div>
+          </div>
+        </div>
+    </div>
+</div>
+<br>
+<center>
+  <footer>
+    <div class="foot">
+  
+    Did you like it? Please do endorse me in <b><a href="https://www.linkedin.com/in/mohammed-siddiq-2014101aa/">LinkedIn</a></b> | Developed By <b><a href="https://github.com/Sidu1605">Mohammed Siddiq</a></b>
+    
+  
+    </div>
+    <script src="{{ url_for('static', filename='js/main.js') }}" type="text/javascript"></script>    
+  </footer>
+
+</center>
+
+{% endblock %}
